@@ -1,7 +1,7 @@
 
 
 
-The system will be developed in Java using the JavaFX and Gluon Scene Builder framework for GUI design and will run on Windows-based systems.
+This program will be developed in Java using the JavaFX and Gluon Scene Builder framework for GUI design and will run on Windows-based systems.
 The application will utilize local data storage as well as Mysql for trivia questions 
 and implement efficient memory and input handling to ensure smooth performance for multiple players
 
