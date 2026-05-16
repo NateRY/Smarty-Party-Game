@@ -3,6 +3,8 @@ module org.example.smartypartygame {
     requires javafx.fxml;
 
 
-    opens org.example.smartypartygame to javafx.fxml;
-    exports org.example.smartypartygame;
+    opens App to javafx.fxml;
+    opens Controller to javafx.fxml;
+
+    exports App;
 }
