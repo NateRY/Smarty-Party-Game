@@ -9,42 +9,43 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class Scene_Controller {
 
-    private Scene scene;
-    private Stage stage;
-    private Parent root;
+
+    public static Scene scene;
+    public static Stage stage;
+    public static Parent root;
 
 
 
-    public void setRoot(ActionEvent event, String filename) throws IOException {
+    public void setRoot(ActionEvent event, String fileName) throws IOException {
 
-        root = loadScene("SP_HomeScreen");
+        root = FXMLLoader.load(Objects.requireNonNull(Gamer_Luncher.class.getResource("/fxml/" +
+                fileName + ".fxml")));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
+        scene = new Scene(root, 700, 700);
         stage.setScene(scene);
         stage.show();
 
     }
 
-    public void setRoot(String filename) throws IOException {
-        root = loadScene(filename);
-        stage = (Stage) root.getScene().getWindow();
-        scene = new Scene(root);
+    public static Parent setRoot(String fileName) throws IOException {
+        root = FXMLLoader.load(Objects.requireNonNull(Scene_Controller.class.getResource("/fxml/" +
+                fileName + ".fxml")));
+        stage.setScene(root.getScene());
+        scene = new Scene(root, 700,700);
         stage.setScene(scene);
         stage.show();
 
+        return root;
+
     }
 
+    public static Scene getScene() { return scene;}
+    public static Stage getStage() { return stage;}
+    public static Parent getRoot() { return root; }
 
 
-
-    public static Parent loadScene(String fileName) throws IOException {
-
-        FXMLLoader loader = new FXMLLoader(Gamer_Luncher.class.getResource("/resources/view/" +
-                fileName + ".fxml"));
-
-        return loader.load();
-    }
 }

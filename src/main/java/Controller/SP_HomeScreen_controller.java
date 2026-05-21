@@ -13,8 +13,26 @@ public class SP_HomeScreen_controller {
 
     //This brings player to the name entry scene
     public void goSinglePlayer() throws IOException {
-        Scene_Controller.loadScene("SinglePlayer_Entry");
+        Scene_Controller.setRoot("SinglePlayer_Entry");
     }
+
+
+    @FXML private void SignIn() throws IOException
+    {
+        //when I finish method I will have it return a boolean
+        //as a means for updating settings
+        //boolean flag = false;
+
+        Scene_Controller.setRoot("SP_Login");
+
+
+
+
+    }
+
+
+
+
 
 //    public void goP2_NewGame() throws IOException {
 //        Scene_Controller.loadScene("P2_Gamplay_Entry");
@@ -39,7 +57,7 @@ public class SP_HomeScreen_controller {
 //
 //    @FXML
 //    private void goHome() throws IOException {
-//        Scene_Controller.loadScene("Smarty_Party_HomeScreen");
+//        Scene_Controller.setRoot("SP_HomeScreen");
 //
 //    }
 
