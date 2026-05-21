@@ -1,0 +1,30 @@
+USE SmartyParty;
+
+create table player(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(50),
+    password VARCHAR(250),
+    score INT
+);
+
+create table game(
+id INT PRIMARY KEY AUTO_INCREMENT,
+round INT,
+score INT,
+date VARCHAR(45),
+level INT
+);
+
+
+create table question(
+id INT PRIMARY KEY AUTO_INCREMENT,
+question VARCHAR(250),
+hint VARCHAR(45),
+answer VARCHAR(15),
+optionOne VARCHAR(15),
+optionTwo VARCHAR(15),
+optionThree VARCHAR(15),
+level INT,
+subject VARCHAR(20)
+
+);

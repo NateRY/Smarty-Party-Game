@@ -1,7 +1,11 @@
 package Controller;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+
+import java.io.IOException;
 
 public class SP_Login_controller {
 
@@ -9,22 +13,44 @@ public class SP_Login_controller {
     private String password;
     private Boolean logStatues = false;
 
-    @FXML private Label usernameLabel;
-    @FXML private Label passwordLabel;
+    @FXML private TextField usernameField;
+    @FXML private TextField passwordField;
+    @FXML private Button EnterButton;
+    @FXML private Label loginFeedbackLabel;
 
 
-    public Boolean checkLogin(String username, String password) {
+    public void initialize() {
         //put link to database inside this method
 
-
-        this.username = username;
-        this.password = password;
-
-
+//        username = username;
+//        password = password;
+        //logStatues = false;
 
 
 
 
-        return logStatues;
+
+
+
+        LoginCheck();
+
     }
+
+
+    public void LoginCheck() {
+        //if return 'logStatues' is true then the visibility will turn
+        //to a success
+
+        loginFeedbackLabel.setVisible(logStatues);
+
+//        return login;
+    }
+
+
+    @FXML public void goHome() throws IOException {
+        Scene_Controller.setRoot("SP_HomeScreen");
+    }
+
+
+
 }
