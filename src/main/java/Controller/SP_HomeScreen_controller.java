@@ -19,15 +19,7 @@ public class SP_HomeScreen_controller {
 
     @FXML private void SignIn() throws IOException
     {
-        //when I finish method I will have it return a boolean
-        //as a means for updating settings
-        //boolean flag = false;
-
         Scene_Controller.setRoot("SP_Login");
-
-
-
-
     }
 
 

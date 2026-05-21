@@ -12,9 +12,6 @@ import java.util.List;
 //This is the Controller Class for Player Entry scene
 public class SinglePlayer_Entry_Controller {
 
-    //Connects to Name TextField
-    @FXML private TextField GuestnameEntry;
-
     //Connects to the Subject/Catagory combo box
     @FXML private ComboBox<String> subject_entry;
 
@@ -40,8 +37,6 @@ public class SinglePlayer_Entry_Controller {
 
     public void initialize() {
 
-        //Stores entered name
-        PlayerName = GuestnameEntry.getText().trim();
 
 
         //sets up the varible that the level comboBox will display
