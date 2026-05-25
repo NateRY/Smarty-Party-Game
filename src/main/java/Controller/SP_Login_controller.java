@@ -22,9 +22,13 @@ public class SP_Login_controller {
     public void initialize() {
         //put link to database inside this method
 
-//        username = username;
-//        password = password;
-        //logStatues = false;
+
+
+        username = usernameField.getText().trim();
+        password = passwordField.getText().trim();
+
+
+        logStatues = false;
 
 
 
@@ -43,7 +47,6 @@ public class SP_Login_controller {
 
         loginFeedbackLabel.setVisible(logStatues);
 
-//        return login;
     }
 
 

@@ -37,8 +37,13 @@
                   <Font name="Impact" size="20.0" />
                </font>
             </Label>
-            <HBox alignment="BOTTOM_RIGHT" prefHeight="47.0" prefWidth="600.0">
+            <HBox alignment="BOTTOM_RIGHT" prefHeight="47.0" prefWidth="600.0" spacing="350.0">
                <children>
+                  <Button fx:id="CreateAccount" mnemonicParsing="false" prefHeight="28.0" prefWidth="119.0" style="-fx-background-color: #00cc99; -fx-text-fill: black; -fx-background-radius: 20; -fx-padding: 10;" text="Create">
+                     <font>
+                        <Font name="Impact" size="20.0" />
+                     </font>
+                  </Button>
                   <Button mnemonicParsing="false" onAction="#goHome" prefHeight="44.0" prefWidth="119.0" style="-fx-background-color: #f4b400; -fx-background-radius: 20; -fx-padding: 10;" text="Main Menu">
                      <font>
                         <Font name="Impact" size="20.0" />

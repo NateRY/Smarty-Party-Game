@@ -35,7 +35,7 @@
    <center>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
-            <HBox prefHeight="34.0" prefWidth="600.0">
+            <HBox alignment="CENTER" prefHeight="34.0" prefWidth="600.0">
                <children>
                   <Button alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#SignIn" prefHeight="43.0" prefWidth="106.0" style="-fx-background-color: Black; -fx-background-radius: 20; -fx-padding: 10;" text="Sign in" textFill="#e8e8e8">
                      <font>

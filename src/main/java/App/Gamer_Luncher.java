@@ -1,18 +1,12 @@
 package App;
 
+import database.DatabaseManager;
 import Controller.Scene_Controller;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.Objects;
-
-import static Controller.Scene_Controller.scene;
-import static Controller.Scene_Controller.stage;
+import java.sql.Connection;
 
 
 public class Gamer_Luncher extends Application {
@@ -20,31 +14,22 @@ public class Gamer_Luncher extends Application {
     @Override
     public void start(Stage primarystage) throws IOException {
 
+        Connection conn = DatabaseManager.connect();
+        if (conn != null) {
+            System.out.println("Connected to database.");
+        }
+        else{
+            System.out.println("Connection Failed.");
+        }
+
         Scene_Controller.stage = primarystage;
         Scene_Controller.stage.setTitle("Smarty Party");
 
 
         Scene_Controller.setRoot("SP_HomeScreen");
+        primarystage.show();
 
     }
 
-    public static void main(String[] args) {
-        launch(args);
-    }
+    public static void main(String[] args) {launch(args);}
 }
-
-
-
-
-
-//try{
-//
-//Parent root = FXMLLoader.load(getClass().getResource( "/fxml/SP_HomeScreen.fxml"));
-//Scene scene = new Scene(root, 700, 700);
-//            stage.setScene(scene);
-//            stage.show();
-//
-//        } catch (IOException e)
-//        {
-//        e.printStackTrace();
-//        }
