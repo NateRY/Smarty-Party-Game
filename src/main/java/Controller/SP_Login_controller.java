@@ -14,7 +14,7 @@ public class SP_Login_controller {
 
     private String username;
     private String password;
-    private Boolean logStatues = false;
+    private static Boolean logStatues = false;
 
     @FXML private TextField usernameField;
     @FXML private PasswordField pswField;
@@ -25,16 +25,6 @@ public class SP_Login_controller {
     public void initialize() {
         //put link to database inside this method
 
-        username = usernameField.getText().trim();
-        password = pswField.getText().trim();
-
-
-    }
-
-
-   @FXML public void LoginCheck() {
-        //if return 'logStatues' is true then the visibility will turn
-        //to a success
 
         if (usernameField.getText().equals("") || pswField.getText().equals("")) {
             loginFeedbackLabel.setText("Please fill all the fields");
@@ -45,8 +35,26 @@ public class SP_Login_controller {
 
         }
 
+       LoginCheck();
+
+
+    }
+
+
+   @FXML public void LoginCheck() {
+        //if return 'logStatues' is true then the visibility will turn
+        //to a success
+
+       username = usernameField.getText().trim();
+       password = pswField.getText().trim();
+
+
+
 
         logStatues = PlayerDatabaseManager.verifylogin(username, password);
+
+        System.out.println(logStatues);
+
 
         if(!logStatues) {
 
@@ -54,11 +62,17 @@ public class SP_Login_controller {
             loginFeedbackLabel.setTextFill(Color.RED);
             loginFeedbackLabel.setVisible(true);
 
-        }else if(logStatues)
-        {
+        }else{
             loginFeedbackLabel.setTextFill(Color.GREEN);
             loginFeedbackLabel.setText("Loginjjjjjjj Successfully");
             loginFeedbackLabel.setVisible(true);
+            try{
+                goHome();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+
         }
 
 

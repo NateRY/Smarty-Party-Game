@@ -11,6 +11,12 @@ public class PlayerDatabaseManager {
 
     public static boolean verifylogin(String username, String password) {
 
+        if( username.equals("") || password.equals("") ) {
+            return  false;
+        }
+
+
+
         String loginStatment = "SELECT * FROM player WHERE username = ? AND password = ?";
 
 
