@@ -37,7 +37,7 @@
          <children>
             <HBox alignment="CENTER" prefHeight="34.0" prefWidth="600.0">
                <children>
-                  <Button alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#SignIn" prefHeight="43.0" prefWidth="106.0" style="-fx-background-color: Black; -fx-background-radius: 20; -fx-padding: 10;" text="Sign in" textFill="#e8e8e8">
+                  <Button fx:id="SignInButton" alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#SignIn" prefHeight="43.0" prefWidth="106.0" style="-fx-background-color: Black; -fx-background-radius: 20; -fx-padding: 10;" text="Sign in" textFill="#e8e8e8">
                      <font>
                         <Font name="Impact" size="20.0" />
                      </font>

@@ -25,7 +25,6 @@ public class SP_Login_controller {
     public void initialize() {
         //put link to database inside this method
 
-
         if (usernameField.getText().equals("") || pswField.getText().equals("")) {
             loginFeedbackLabel.setText("Please fill all the fields");
             loginFeedbackLabel.setTextFill(Color.RED);
@@ -35,23 +34,39 @@ public class SP_Login_controller {
 
         }
 
-       LoginCheck();
-
-
     }
+
+
+
+    String setUsername() {
+        username = usernameField.getText();
+        return username;
+    }
+    String setPassword() {
+        password = pswField.getText();
+        return password;
+    }
+
+    String getUsername() {
+        return username;
+    }
+    String getPassword() {
+        return password;
+    }
+
+
 
 
    @FXML public void LoginCheck() {
         //if return 'logStatues' is true then the visibility will turn
         //to a success
 
-       username = usernameField.getText().trim();
-       password = pswField.getText().trim();
+       setUsername();
+       setPassword();
 
 
 
-
-        logStatues = PlayerDatabaseManager.verifylogin(username, password);
+        logStatues = PlayerDatabaseManager.verifylogin(getUsername(), getPassword());
 
         System.out.println(logStatues);
 
@@ -64,8 +79,10 @@ public class SP_Login_controller {
 
         }else{
             loginFeedbackLabel.setTextFill(Color.GREEN);
-            loginFeedbackLabel.setText("Loginjjjjjjj Successfully");
+            loginFeedbackLabel.setText("Login Successfully");
             loginFeedbackLabel.setVisible(true);
+            System.out.println("This is current User: " + getUsername());
+
             try{
                 goHome();
             } catch (IOException e) {
@@ -74,9 +91,6 @@ public class SP_Login_controller {
 
 
         }
-
-
-
 
 
     }
@@ -92,7 +106,10 @@ public class SP_Login_controller {
             System.out.println("Fill all the fields");
         }
 
-        PlayerDatabaseManager.CreatePlayer(username,password);
+        setUsername();
+        setPassword();
+
+        PlayerDatabaseManager.CreatePlayer(getUsername(),getPassword());
 
         if(logStatues == false) {
 
@@ -102,14 +119,12 @@ public class SP_Login_controller {
             loginFeedbackLabel.setTextFill(Color.GREEN);
             loginFeedbackLabel.setText("Login Successfully");
             loginFeedbackLabel.setVisible(true);
+            System.out.println("This is current User: " + getUsername());
 
         }
 
 
     }
-
-
-
 
 
 

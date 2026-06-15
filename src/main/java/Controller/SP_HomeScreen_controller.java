@@ -10,6 +10,7 @@ import java.io.IOException;
 public class SP_HomeScreen_controller {
 
 //    @FXML private Button SinglePlayer;
+    @FXML private Button SignInButton;
 
     //This brings player to the name entry scene
     public void goSinglePlayer() throws IOException {
@@ -19,6 +20,11 @@ public class SP_HomeScreen_controller {
 
     @FXML private void SignIn() throws IOException
     {
+        //work on making the buttion ether: disappear, change text
+        //to say log out, or make it null;
+        SignInButton.setVisible(false);
+
+
         Scene_Controller.setRoot("SP_Login");
     }
 

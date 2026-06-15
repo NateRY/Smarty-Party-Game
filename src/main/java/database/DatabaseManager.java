@@ -2,6 +2,7 @@ package database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class DatabaseManager {
 
@@ -19,6 +20,11 @@ public class DatabaseManager {
 
 
         return null;
+
+    }
+
+    public static void getQuestions() throws SQLException {
+
 
     }
 
