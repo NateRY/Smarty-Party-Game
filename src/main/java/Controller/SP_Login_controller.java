@@ -84,6 +84,9 @@ public class SP_Login_controller {
             System.out.println("This is current User: " + getUsername());
 
             try{
+                password = "";
+                setUsername();
+
                 goHome();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -106,8 +109,10 @@ public class SP_Login_controller {
             System.out.println("Fill all the fields");
         }
 
+
         setUsername();
         setPassword();
+
 
         PlayerDatabaseManager.CreatePlayer(getUsername(),getPassword());
 
